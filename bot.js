@@ -14,6 +14,8 @@ client.on('ready', () => {
   console.log(`servers! [ " ${client.guilds.size} " ]`);
   console.log('')
   console.log('╚[════════════════════════════════════]╝')
+}
+)};
 client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
