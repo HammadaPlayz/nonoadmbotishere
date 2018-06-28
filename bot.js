@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 var prefix = "^"
 
+
+client.on('ready', () => {
+  client.user.setGame(`!help `,'https://www.twitch.tv/v5bz');
 client.on('ready', () => {
   console.log('╔[════════════════════════════════════]╗');
   console.log('')
@@ -61,10 +64,6 @@ client.on('message', message => {
 });
 
 
-client.on('ready', () => {
-  client.user.setGame(`!help `,'https://www.twitch.tv/v5bz');
-}
-});
 
 client.on('message', message => {
 if (message.content.startsWith("!kick")) {
