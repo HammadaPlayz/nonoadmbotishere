@@ -77,6 +77,6 @@ return;
  [$kick !! TO KICK ANYONE]***
 
  `);
-	   
+}	   
 });
 client.login(process.env.BOT_TOKEN);
