@@ -19,7 +19,8 @@ client.on('ready', () => {
   console.log('╚[════════════════════════════════════]╝')
 
 
-
+}
+          });
 
 
 client.login(process.env.BOT_TOKEN);
