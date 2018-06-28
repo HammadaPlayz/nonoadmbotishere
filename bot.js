@@ -1,10 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix = "^"
+var prefix = "-"
 
-
-client.on('ready', () => {
-  client.user.setGame(`!help `,'https://www.twitch.tv/v5bz');
 client.on('ready', () => {
   console.log('╔[════════════════════════════════════]╗');
   console.log('')
@@ -17,10 +14,11 @@ client.on('ready', () => {
   console.log(`servers! [ " ${client.guilds.size} " ]`);
   console.log('')
   console.log('╚[════════════════════════════════════]╝')
+});
 
 
-}
-          });
-
+client.on('ready', () => {
+     client.user.setActivity("-help",{type: 'WATCHING'})
+});
 
 client.login(process.env.BOT_TOKEN);
