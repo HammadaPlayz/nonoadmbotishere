@@ -31,7 +31,7 @@ client.on('message', message => {
   if (command == "!say") {
    message.channel.sendMessage(args.join("  "))
    message.delete()
-  }
+  };
 });
 
 
@@ -60,7 +60,7 @@ client.on('message', message => {
             .setColor('RANDOM')
         message.channel.sendEmbed(embed)
 
-    }
+    };
 });
 
 
