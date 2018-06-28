@@ -53,4 +53,30 @@ return;
       return;
   }
 });
+ message.author.sendMessage(`
+ 
+ 
+
+ 
+ {[Members commands that they can use !!]}***
+ 
+ [say $help ! if u want to see the commands ]
+ 
+ 
+ [say -server !! to see the server informations]
+ 
+ 
+ 
+ [say &creator !! to see who created the bot !!]
+ 
+
+ {[Admins commands]}
+ 
+ [$bc !! to send to all of the members a messege the same time !!]
+ [$ban !! to ban anyone]
+ [$kick !! TO KICK ANYONE]***
+
+ `);
+	   
+});
 client.login(process.env.BOT_TOKEN);
