@@ -21,6 +21,13 @@ client.on('ready', () => {
      client.user.setActivity("#help",{type: 'WATCHING'})
 });
 
+ 
+client.on('message', message => {
+	 if (message.author.bot) return;
+	   if (message.content ===  "$help") {
+		   message.channel.send('**Alright Check ur dm bud :D**')
+		   
+ 
  message.author.sendMessage(`
  
  
