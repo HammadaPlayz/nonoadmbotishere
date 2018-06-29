@@ -21,4 +21,32 @@ client.on('ready', () => {
      client.user.setActivity("#help",{type: 'WATCHING'})
 });
 
+ message.author.sendMessage(`
+ 
+ 
+
+ 
+ {[Members commands that they can use !!]}
+ 
+ [say help ! if u want to see the commands ]
+ 
+ 
+ [say ^server !! to see the server informations]
+ 
+ 
+ [say ^id !! if u want to see ur informations]
+ 
+ 
+ [say &creator !! to see who created the code !!]
+ 
+
+ {[Admins commands]}
+ 
+ [$bc !! to send to all of the members a messege the same time !!]
+ [$ban !! to ban anyone]
+ [$kick !! TO KICK ANYONE]
+`);
+	   
+});
+
 client.login(process.env.BOT_TOKEN);
