@@ -22,6 +22,16 @@ client.on('ready', () => {
 });
 
  
+  
+client.on('message', message => {
+  if (message.guild) {
+ let embed = new Discord.RichEmbed()
+  let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc') {
+  if (!args[1]) {
+message.channel.send("**#bc <message>**");
+return;
+}
       message.guild.members.forEach(m => {
  if(!message.member.hasPermission('ADMINISTRATOR')) return;
           var bc = new Discord.RichEmbed()
@@ -33,7 +43,7 @@ client.on('ready', () => {
           .setColor('RANDOM')
           m.send(`${m}`,{embed: bc});
       });
-      const Hamada = new Discord.RichEmbed()
+      const Himo = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
       .setTitle('✅| the messege is loading ')
       .addBlankField(true)
