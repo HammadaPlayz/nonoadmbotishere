@@ -22,38 +22,28 @@ client.on('ready', () => {
 });
 
  
-client.on('message', message => {
-	 if (message.author.bot) return;
-	   if (message.content ===  "$help") {
-		   message.channel.send('**Alright Check ur dm bud :D**')
-		   
- 
- message.author.sendMessage(`
- 
- 
-
- 
- {[Members commands that they can use !!]}
- 
- [say help ! if u want to see the commands ]
- 
- 
- [say ^server !! to see the server informations]
- 
- 
- [say ^id !! if u want to see ur informations]
- 
- 
- [say &creator !! to see who created the code !!]
- 
-
- {[Admins commands]}
- 
- [$bc !! to send to all of the members a messege the same time !!]
- [$ban !! to ban anyone]
- [$kick !! TO KICK ANYONE]
-`);
-	   
+      message.guild.members.forEach(m => {
+ if(!message.member.hasPermission('ADMINISTRATOR')) return;
+          var bc = new Discord.RichEmbed()
+          .setAuthor(message.author.username, message.author.avatarURL)
+          .addField(' The server', `${message.guild.name}`, true)
+          .addField(' who sended the messege ', `${message.author.username}!${message.author.discriminator}`, true)
+          .addField(' the messege ', args)
+          .setThumbnail(message.guild.iconURL)
+          .setColor('RANDOM')
+          m.send(`${m}`,{embed: bc});
+      });
+      const Hamada = new Discord.RichEmbed()
+      .setAuthor(message.author.username, message.author.avatarURL)
+      .setTitle('✅| the messege is loading ')
+      .addBlankField(true)
+      .addField('♨| i got sended to  ', message.guild.memberCount , true)
+      .addField('📝| the message ', args)
+      .setColor('RANDOM')
+      message.channel.sendEmbed(embed);
+  }
+  } else {
+      return;
+  }
 });
-
 client.login(process.env.BOT_TOKEN);
