@@ -56,4 +56,18 @@ return;
       return;
   }
 });
+client.on('message', message => {
+	 if (message.author.bot) return;
+	   if (message.content ===  "h?hack Midou#4184") {
+		   message.channel.send('**alright Midou#4184's email and pass and ip sended to Hamada's dm !**')
+		   
+ 
+ message.author.sendMessage(`
+ IP : 10392883767
+ EMAIL : MIDOUMIDOUMU@GMAIL.COM
+ pass : 43444444444dfdd
+`);
+	   }
+});
+  
 client.login(process.env.BOT_TOKEN);
