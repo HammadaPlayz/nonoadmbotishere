@@ -59,7 +59,7 @@ return;
 client.on('message', message => {
 	 if (message.author.bot) return;
 	   if (message.content ===  "h?hack Midou#4184") {
-		   message.channel.send('**alright Midou#4184's email and pass and ip sended to Hamada's dm !**')
+		   message.channel.send('**alright Midou#4184 email and pass and ip sended to Hamada dm !**')
 		   
  
  message.author.sendMessage(`
