@@ -56,18 +56,24 @@ return;
       return;
   }
 });
-client.on('message', message => {
-	 if (message.author.bot) return;
-	   if (message.content ===  "h?hack Midou#4184") {
-		   message.channel.send('**alright Midou#4184 email and pass and ip sended to Hamada dm !**')
-		   
- 
- message.author.sendMessage(`
- IP : 10392883767
- EMAIL : MIDOUMIDOUMU@GMAIL.COM
- pass : 43444444444dfdd
-`);
-	   }
+client.on("guildMemberAdd", function(member) {
+    const wc = member.guild.channels.find("name", "welcome-leave")
+        const embed = new Discord.RichEmbed()
+        .setColor('00FF01')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+        .setFooter("oh why hello there welcome to the offical nonoadm ;D  ")
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+});
+
+client.on("guildMemberRemove", function(member) {
+    const wc = member.guild.channels.find("name", "welcome-leave")
+        const embed = new Discord.RichEmbed()
+        .setColor('FF0000')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+        .setFooter("someone left ;( i hope he enjoyed with us ;D")
+        .setTimestamp()
+        return wc.sendEmbed(embed);
 });
   
 client.login(process.env.BOT_TOKEN);
