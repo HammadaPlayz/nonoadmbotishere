@@ -98,7 +98,7 @@ client.on("guildMemberRemove", function(member) {
             .setColor('RANDOM')
         message.channel.sendEmbed(embed)
 
-    
+    }
 });
 	  
 client.login(process.env.BOT_TOKEN);
