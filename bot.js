@@ -75,6 +75,23 @@ client.on("guildMemberRemove", function(member) {
         .setTimestamp()
         return wc.sendEmbed(embed);
 });
-  
+  client.on('message', message => {
+            if (message.content.startsWith("#help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **$bc** ' ,' **sending messeges to all members** ')
+.addField('     **%clear** ' ,' **To clear messeges** ')
+.addField('     **%help** ' ,' **showing u the commands** ')
+.addField('    **$server**' ,' **showing u the server info** ')
+.addField('    **%ban**' ,' **ban the user** ')
+.addField('    **%kick**' ,' **kick the user** ')
+.addField('    **^avatar**' ,' **get ur avatar !** ')
+.addField('    **%say**' ,' **let the bot say like u say** ')
+.addField('    **%e**' ,' **let the bot say like u say but on emoji !** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
+
  
 client.login(process.env.BOT_TOKEN);
