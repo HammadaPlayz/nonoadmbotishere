@@ -448,7 +448,7 @@ client.on('message', message => {
     embed : kickembed
   })
 }
-});
+);
 
 
 
