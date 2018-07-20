@@ -167,7 +167,7 @@ let welcomer = member.guild.channels.find("name","welcome");
          .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
      welcomer.send({embed:norelden});          
                
- 
+      }
       
       });
 
@@ -182,7 +182,7 @@ let welcomer = member.guild.channels.find("name","welcome");
       .addBlankField(true)
       .addField('The members : ',`${message.guild.memberCount}`)
       message.channel.send(IzRo);
-
+ }
 
 });
 
@@ -207,7 +207,7 @@ var prefix = "-";
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
              message.channel.overwritePermissions(message.guild.id, {
              READ_MESSAGES: false
-
+	     }
 });
 
 
@@ -224,7 +224,8 @@ client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed()
   .setColor(0x5500ff)
   .setDescription(`**ty for adding the bot on ur server ;D !!**`)
-      guild.owner.send(embed)
+  guild.owner.send(embed)
+}
 });
 
 
@@ -269,12 +270,33 @@ message.channel.send(embed);
 
 
 
-    
+} 
 });
 
 
 
 
+client.on('message', message => {
+    if (message.content.startsWith("-bot")) {
+    message.channel.send({
+        embed: new Discord.RichEmbed()
+            .setAuthor(client.user.username,client.user.avatarURL)
+            .setThumbnail(client.user.avatarURL)
+            .setColor('RANDOM')
+            .setTitle('``INFO NonoAdm Bot`` ')
+            .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
+            .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
+            .addField('``servers``', [client.guilds.size], true)
+            .addField('``channels``' , `[ ${client.channels.size} ]` , true)
+            .addField('``Users``' ,`[ ${client.users.size} ]` , true)
+            .addField('``My Name``' , `[ ${client.user.tag} ]` , true)
+            .addField('``My ID``' , `[ ${client.user.id} ]` , true)
+			      .addField('``My Prefix``' , `[ - ]` , true)
+			      .addField('``My Language``' , `[ Java Script ]` , true)
+			 
+    })
+}
+});
 
 
 
