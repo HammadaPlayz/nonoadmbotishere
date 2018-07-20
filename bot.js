@@ -211,31 +211,6 @@ HE TRIED TO HACK THE SERVER  !!!!${channel.guild.name}`)
   },Otime)
   });
 
-client.on('message', msg => {
-	var prefix = "-";
-  if (msg.author.bot) return;
-  if (!msg.content.startsWith(prefix)) return;
-  let command = msg.content.split(" ")[0];
-  command = command.slice(prefix.length);
-  let args = msg.content.split(" ").slice(1);
-
-    if(command === "clr") {
-        const emoji = client.emojis.find("name", "wastebasket")
-    let textxt = args.slice(0).join("");
-    if(msg.member.hasPermission("MANAGE_MESSAGES")) {
-    if (textxt == "") {
-        msg.delete().then
-    msg.channel.send("***```Supply A Number 👌```***").then(m => m.delete(3000));
-} else {
-    msg.delete().then
-    msg.delete().then
-    msg.channel.bulkDelete(textxt);
-        msg.channel.send("```Cleard: " + textxt + "\n Messages```").then(m => m.delete(3000));
-        }    
-    }
-}
-});
-
 
 
 
@@ -285,7 +260,7 @@ let welcomer = member.guild.channels.find("name","welcome");
      welcomer.send({embed:norelden});          
                
  
-      }
+      
       });
 
 
@@ -299,7 +274,7 @@ let welcomer = member.guild.channels.find("name","welcome");
       .addBlankField(true)
       .addField('The members : ',`${message.guild.memberCount}`)
       message.channel.send(IzRo);
-    });
+
 
 });
 
@@ -448,7 +423,7 @@ client.on('message', message => {
     embed : kickembed
   })
 }
-);
+});
 
 
 
