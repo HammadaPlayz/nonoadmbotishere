@@ -207,9 +207,7 @@ var prefix = "-";
       if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('You Dont Have Perms :x:');
              message.channel.overwritePermissions(message.guild.id, {
              READ_MESSAGES: false
- })
-              message.channel.send('Channel Hided Successfully ! :white_check_mark:  ')
- }
+
 });
 
 
@@ -270,7 +268,7 @@ let embed = new Discord.RichEmbed()
 message.channel.send(embed);
 
 
-}
+
     
 });
 
