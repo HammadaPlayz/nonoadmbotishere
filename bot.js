@@ -198,8 +198,8 @@ client.on('message', message => {
 
 
 
-	}
- });
+	
+ 
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
     if(message.content.includes('نوب')){
