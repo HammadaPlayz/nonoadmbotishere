@@ -418,16 +418,5 @@ client.on('message', message => {
 
 
 
-client.on('guildCreate', guild => {
-  var embed = new Discord.RichEmbed()
-  .setColor(0x5500ff)
-  .setDescription(`**ty for adding the bot on ur server ;D !!**`)
-  guild.owner.send(embed)
-}
-});
-
-
-
-
 
 client.login(process.env.BOT_TOKEN);
