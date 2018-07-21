@@ -84,7 +84,7 @@ client.on('message', message => {
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "#say") {
+  if (command == "say") {
    message.channel.sendMessage(args.join("  "))
    message.delete()
   }
@@ -300,7 +300,7 @@ client.on('message', message => {
 }
 });
    client.on("message", message => {
-	var prefix = "-";
+	var prefix = "#";
  if (message.content === "#help-admin") {
 	  message.channel.send('**check ur dm bud ;D !!** :mailbox_with_mail: ');
   const embed = new Discord.RichEmbed() 
