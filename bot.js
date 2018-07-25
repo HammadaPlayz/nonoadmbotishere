@@ -34,7 +34,7 @@ client.on('message', message => {
   let args = message.content.split(' ').slice(1).join(' ');
 if(message.content.split(' ')[0] == prefix + 'bc') {
   if (!args[1]) {
-message.channel.send("**^bc <message>**");
+message.channel.send("**#bc <message>**");
 return;
 }
       message.guild.members.forEach(m => {
@@ -64,18 +64,6 @@ return;
 
 
 
-client.on('message', message => {
-            if (message.content.startsWith("#help-general")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **#help** ' ,' **showing u the commands** ')
-.addField('    **#server**' ,' **showing u the server info** ')
-.addField('    **#avatar**' ,' **get ur avatar !** ')
-.addField('    **#say**' ,' **let the bot say like u say** ')
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
@@ -318,8 +306,7 @@ client.on('message', message => {
 
   message.guild.member(user).kick();
 
-  const kickembed = new Discord.RichEmbed()
-  .setAuthor(`KICKED!`, user.displayAvatarURL)
+  const kickembed = new Discord.RichEmbed()  .setAuthor(`KICKED!`, user.displayAvatarURL)
   .setColor("RANDOM")
   .setTimestamp()
   .addField("**User:**",  '**[ ' + `${user.tag}` + ' ]**')
@@ -343,13 +330,26 @@ client.on('message', message => {
 ❖-#halls | its a little game u can play it with ur  friend !!
 ❖-#clear | tired removing messeages ? now u can clear faster !!
 ❖-#bc | Lets send a messeage to all of the members !!** `)
-   message.author.sendEmbed(embed)
+
     
    }
    });  
+   client.on("message", message => {
+	var prefix = "#";
+ if (message.content === "#help-admin") {
+	  message.channel.send('**check ur dm bud ;D !!** :mailbox_with_mail: ');
+  const embed = new Discord.RichEmbed() 
+      .setColor("#000000")
+      .setDescription(`
+         
+**❖-#server | Oh look !! The server info !?
+❖-#say | Let the bot say like u say !
+❖-#clear | tired removing messeages ? now u can clear faster !!
+❖-#bc | Lets send a messeage to all of the members !!** `)
 
-
-
+    
+   }
+   });  
 
 
 
